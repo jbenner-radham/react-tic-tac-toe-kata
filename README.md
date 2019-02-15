@@ -1,3 +1,25 @@
+React Tic-Tac-Toe Kata
+======================
+> An exercise in which we'll create a game of tic-tac-toe using [React](https://reactjs.org/).
+
+Description
+-----------
+Create a [React](https://reactjs.org/) web application for the game of tic-tac-toe. The game should be a playable web
+application. It should prompt users for their turn. The game should determine the winner or if there is a tie. The game
+should allow for rewinding of moves. The game should be able to be reset without stopping the application. Styling
+should be used for a pleasing aesthetic. The use of multiple small components is valued.
+
+Requirements
+------------
+- Test drive all changes.
+- Utilize [Mocha](https://mochajs.org/) or [Jest](https://jestjs.io/).
+- Utilize [Enzyme](https://airbnb.io/enzyme/) for component testing.
+- Utilize a public [GitHub](https://github.com/) repo.
+- Commit after writing each test.
+- Commit after making each test pass.
+
+---
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
