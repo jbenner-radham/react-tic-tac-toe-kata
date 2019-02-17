@@ -28,3 +28,11 @@ it('has a "cells" property which is an array of nine values', () => {
 it('has a "takeCell" method', () => {
     expect(Board.prototype.takeCell).toBeInstanceOf(Function);
 });
+
+it('toggles the "playerTurn" property when the "takeCell" method is invoked', () => {
+    const board = mount(<Board/>);
+
+    board.instance().takeCell();
+
+    expect(board.state().playerTurn).toBe('O');
+});
