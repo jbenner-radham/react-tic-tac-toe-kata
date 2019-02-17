@@ -19,3 +19,7 @@ it('has a "cells" property which is an array of nine values', () => {
 it('has a "playerTurn" property which defaults to "X"', () => {
     expect(shallow(<Game/>).state().playerTurn).toBe('X');
 });
+
+it('has a "assignCell" method', () => {
+    expect(Game.prototype.assignCell).toBeInstanceOf(Function);
+});
