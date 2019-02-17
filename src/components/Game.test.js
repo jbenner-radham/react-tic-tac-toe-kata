@@ -109,3 +109,14 @@ it('returns false from "isATie" if there is a winner', () => {
 
     expect(wrapper.instance().isATie(fixture)).toBe(false);
 });
+
+it('returns true from "isATie" if there is a tie', () => {
+    const wrapper = mount(<Game/>);
+    const fixture = [
+        'X', 'X', 'O',
+        'O', 'O', 'X',
+        'X', 'X', 'O'
+    ];
+
+    expect(wrapper.instance().isATie(fixture)).toBe(true);
+});
