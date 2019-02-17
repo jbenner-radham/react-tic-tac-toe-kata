@@ -63,3 +63,9 @@ it('adds a record to the "history" property when "assignCell" is invoked', () =>
 it('has a "getWinner" method', () => {
     expect(Game.prototype.getWinner).toBeInstanceOf(Function);
 });
+
+it('will return false from the "getWinner" method on a new game', () => {
+    const fixture = Array(9).fill(null);
+
+    expect(shallow(<Game/>).instance().getWinner(fixture)).toBe(false);
+});
