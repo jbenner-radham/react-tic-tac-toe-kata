@@ -120,3 +120,20 @@ it('returns true from "isATie" if there is a tie', () => {
 
     expect(wrapper.instance().isATie(fixture)).toBe(true);
 });
+
+it('displays a "Tie!" message when applicable', () => {
+    const wrapper = mount(<Game/>);
+    const cells = wrapper.find('.Cell');
+
+    cells.at(0).simulate('click'); // X's turn.
+    cells.at(3).simulate('click'); // O's turn.
+    cells.at(1).simulate('click'); // X's turn.
+    cells.at(4).simulate('click'); // O's turn.
+    cells.at(6).simulate('click'); // X's turn.
+    cells.at(2).simulate('click'); // O's turn.
+    cells.at(5).simulate('click'); // X's turn.
+    cells.at(7).simulate('click'); // O's turn.
+    cells.at(8).simulate('click'); // X ties.
+
+    expect(wrapper.find('.Game__message').text()).toBe('Tie!');
+});
