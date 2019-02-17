@@ -36,3 +36,13 @@ it('toggles the "playerTurn" property when the "takeCell" method is invoked', ()
 
     expect(board.state().playerTurn).toBe('O');
 });
+
+it('assigns a player to a cell when "takeCell" is invoked', () => {
+    const board = mount(<Board/>);
+    const index = 0;
+    const { playerTurn } = board.state();
+
+    board.instance().takeCell(index);
+
+    expect(board.state().cells[index]).toBe(playerTurn);
+});
