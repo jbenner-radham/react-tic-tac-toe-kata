@@ -60,6 +60,6 @@ it('adds a record to the "history" property when "assignCell" is invoked', () =>
     expect(delta).toBe(1);
 });
 
-it('has an "isGameDone" method', () => {
-    expect(Game.prototype.isGameDone).toBeInstanceOf(Function);
+it('has a "getWinner" method', () => {
+    expect(Game.prototype.getWinner).toBeInstanceOf(Function);
 });
