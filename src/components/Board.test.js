@@ -46,3 +46,7 @@ it('assigns a player to a cell when "takeCell" is invoked', () => {
 
     expect(board.state().cells[index]).toBe(playerTurn);
 });
+
+it('has a "renderCell" method', () => {
+    expect(Board.prototype.renderCell).toBeInstanceOf(Function);
+});
