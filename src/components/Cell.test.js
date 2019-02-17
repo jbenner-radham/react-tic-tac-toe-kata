@@ -14,3 +14,7 @@ it('renders the value passed to it', () => {
 
     expect(shallow(<Cell value={value}/>).text()).toBe(value);
 });
+
+it('has an "onClick" property', () => {
+    expect(shallow(<Cell/>).props()).toHaveProperty('onClick');
+});
