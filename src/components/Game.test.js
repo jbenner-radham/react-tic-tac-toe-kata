@@ -81,3 +81,16 @@ it('should update the "message" property for "O" when it is their turn', () => {
 
     expect(wrapper.state().message).toEqual(`O's turn.`);
 });
+
+it('should update the "message" property when there is a winner', () => {
+    const wrapper = mount(<Game/>);
+    const cells = wrapper.find('.Cell');
+
+    cells.at(0).simulate('click'); // X's turn.
+    cells.at(3).simulate('click'); // O's turn.
+    cells.at(1).simulate('click'); // X's turn.
+    cells.at(4).simulate('click'); // O's turn.
+    cells.at(2).simulate('click'); // X wins.
+
+    expect(wrapper.find('.Game__message').text()).toBe('X wins!');
+});
