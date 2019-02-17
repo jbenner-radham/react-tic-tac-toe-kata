@@ -45,3 +45,14 @@ it('assigns a player to a cell when "assignCell" is invoked', () => {
 it('has a "history" property which is an array of objects', () => {
     expect(shallow(<Game/>).state().history.every(move => move.cells)).toBe(true);
 });
+
+it('adds a record to the "history" property when "assignCell" is invoked', () => {
+    const wrapper = shallow(<Game/>);
+    const { history } = wrapper.state();
+
+    wrapper.instance().assignCell(0);
+
+    const delta = wrapper.state().history.length - history.length;
+
+    expect(delta).toBe(1);
+});
