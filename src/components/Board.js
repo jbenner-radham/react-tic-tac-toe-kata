@@ -12,6 +12,8 @@ export default class Board extends React.Component {
         };
     }
 
+    takeCell() {}
+
     render() {
         return (
             <div className="Board">
