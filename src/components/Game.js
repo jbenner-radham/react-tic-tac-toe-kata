@@ -25,6 +25,7 @@ export default class Game extends React.Component {
 
         this.setState({
             history: [...history, { cells }],
+            message: `${nextPlayerTurn}'s turn.`,
             playerTurn: nextPlayerTurn
         });
     }
