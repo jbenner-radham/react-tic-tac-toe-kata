@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { shallow } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 import Game from './Game';
 
 it('renders without crashing', () => {
@@ -72,4 +72,12 @@ it('will return false from the "getWinner" method on a new game', () => {
 
 it('has a "message" which indicates it is "X\'s" upon initialization', () => {
     expect(shallow(<Game/>).state().message).toEqual(`X's turn.`);
+});
+
+it('should update the "message" property for "O" when it is their turn', () => {
+    const wrapper = mount(<Game/>);
+
+    wrapper.find('.Cell').first().simulate('click');
+
+    expect(wrapper.state().message).toEqual(`O's turn.`);
 });
