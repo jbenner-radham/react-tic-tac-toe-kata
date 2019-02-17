@@ -23,9 +23,14 @@ export default class Game extends React.Component {
 
         cells[index] = playerTurn;
 
+        const winner = this.getWinner(cells);
+        const message = winner
+            ? `${winner} wins!`
+            : `${nextPlayerTurn}'s turn.`;
+
         this.setState({
             history: [...history, { cells }],
-            message: `${nextPlayerTurn}'s turn.`,
+            message,
             playerTurn: nextPlayerTurn
         });
     }
