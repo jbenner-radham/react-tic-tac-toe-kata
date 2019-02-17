@@ -13,23 +13,28 @@ export default class Game extends React.Component {
     }
 
     assignCell(index) {
-        const cells = [...this.state.cells];
+        const history = [...this.state.history];
+        const current = history[history.length - 1];
+        const cells = [...current.cells];
         const { playerTurn } = this.state;
         const nextPlayerTurn = playerTurn === 'X' ? 'O' : 'X';
 
         cells[index] = playerTurn;
 
         this.setState({
-            cells,
+            history: [...history, { cells }],
             playerTurn: nextPlayerTurn
         });
     }
 
     render() {
+        const { history } = this.state;
+        const current = history[history.length - 1];
+
         return (
             <div className="Game">
                 <Board
-                    cells={this.state.cells}
+                    cells={current.cells}
                     onClick={(index) => this.assignCell(index)}
                 />
             </div>

@@ -39,7 +39,10 @@ it('assigns a player to a cell when "assignCell" is invoked', () => {
 
     wrapper.instance().assignCell(index);
 
-    expect(wrapper.state().cells[index]).toBe(playerTurn);
+    const { history } = wrapper.state();
+    const current = history[history.length - 1];
+
+    expect(current.cells[index]).toBe(playerTurn);
 });
 
 it('has a "history" property which is an array of objects', () => {
