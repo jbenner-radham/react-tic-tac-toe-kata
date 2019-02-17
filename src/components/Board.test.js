@@ -24,3 +24,7 @@ it('has a "cells" property which is an array of nine values', () => {
 
     expect(wrapper.state().cells).toEqual(cells);
 });
+
+it('has a "takeCell" method', () => {
+    expect(Board.prototype.takeCell).toBeInstanceOf(Function);
+});
