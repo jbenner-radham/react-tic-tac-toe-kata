@@ -6,7 +6,8 @@ export default class Game extends React.Component {
         super(props);
 
         this.state = {
-            cells: Array(9).fill(null)
+            cells: Array(9).fill(null),
+            playerTurn: 'X'
         };
     }
 
