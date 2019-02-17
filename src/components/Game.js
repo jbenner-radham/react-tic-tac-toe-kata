@@ -30,7 +30,7 @@ export default class Game extends React.Component {
 
         this.setState({
             history: [...history, { cells }],
-            message,
+            message: this.isATie(cells) ? 'Tie!' : message,
             playerTurn: nextPlayerTurn
         });
     }
