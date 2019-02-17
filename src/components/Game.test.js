@@ -94,3 +94,7 @@ it('should update the "message" property when there is a winner', () => {
 
     expect(wrapper.find('.Game__message').text()).toBe('X wins!');
 });
+
+it('has an "isATie" method', () => {
+    expect(Game.prototype.isATie).toBeInstanceOf(Function);
+});
