@@ -12,6 +12,8 @@ export default class Board extends React.Component {
         };
     }
 
+    renderCell(index) {}
+
     takeCell(index) {
         const cells = [...this.state.cells];
         const { playerTurn } = this.state;
