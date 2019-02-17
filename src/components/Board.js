@@ -12,7 +12,14 @@ export default class Board extends React.Component {
         };
     }
 
-    renderCell(index) {}
+    renderCell(index) {
+        return (
+            <Cell
+                value={this.state.cells[index]}
+                onClick={() => this.takeCell(index)}
+            />
+        );
+    }
 
     takeCell(index) {
         const cells = [...this.state.cells];
@@ -31,19 +38,19 @@ export default class Board extends React.Component {
         return (
             <div className="Board">
                 <div className="Board__row">
-                    <Cell className="Board__cell--top-left"/>
-                    <Cell className="Board__cell--top-middle"/>
-                    <Cell className="Board__cell--top-right"/>
+                    {this.renderCell(0)}
+                    {this.renderCell(1)}
+                    {this.renderCell(2)}
                 </div>
                 <div className="Board__row">
-                    <Cell className="Board__cell--middle-left"/>
-                    <Cell className="Board__cell--middle-middle"/>
-                    <Cell className="Board__cell--middle-right"/>
+                    {this.renderCell(3)}
+                    {this.renderCell(4)}
+                    {this.renderCell(5)}
                 </div>
                 <div className="Board__row">
-                    <Cell className="Board__cell--bottom-left"/>
-                    <Cell className="Board__cell--bottom-middle"/>
-                    <Cell className="Board__cell--bottom-right"/>
+                    {this.renderCell(6)}
+                    {this.renderCell(7)}
+                    {this.renderCell(8)}
                 </div>
             </div>
         );
