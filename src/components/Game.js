@@ -70,6 +70,10 @@ export default class Game extends React.Component {
         return false;
     }
 
+    isATie(cells) {
+
+    }
+
     render() {
         const { history } = this.state;
         const current = history[history.length - 1];
