@@ -1,3 +1,12 @@
 import React from 'react';
+import Board from './Board';
 
-export default class Game extends React.Component {}
+export default class Game extends React.Component {
+    render() {
+        return (
+            <main className="Game">
+                <Board/>
+            </main>
+        );
+    }
+}
