@@ -12,7 +12,11 @@ export default class Board extends React.Component {
         };
     }
 
-    takeCell() {}
+    takeCell() {
+        const { playerTurn } = this.state;
+
+        this.setState({ playerTurn: playerTurn === 'X' ? 'O' : 'X' });
+    }
 
     render() {
         return (
