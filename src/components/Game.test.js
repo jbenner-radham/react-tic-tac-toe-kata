@@ -137,3 +137,14 @@ it('displays a "Tie!" message when applicable', () => {
 
     expect(wrapper.find('.Game__message').text()).toBe('Tie!');
 });
+
+it('can be reset via a button', () => {
+    const wrapper = mount(<Game/>);
+    const resetButton = wrapper.find('.Game__button--reset').first();
+    const cell = wrapper.find('.Cell').first();
+
+    cell.simulate('click');
+    resetButton.simulate('click');
+
+    expect(cell.text()).toBeFalsy();
+});
