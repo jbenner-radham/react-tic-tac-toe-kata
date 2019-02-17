@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { mount } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 import Board from './Board';
 
 const wrapper = mount(<Board/>);
@@ -49,4 +49,10 @@ it('assigns a player to a cell when "takeCell" is invoked', () => {
 
 it('has a "renderCell" method', () => {
     expect(Board.prototype.renderCell).toBeInstanceOf(Function);
+});
+
+it('renders a cell component when "renderCell" is invoked', () => {
+    const cell = shallow(<Board/>).instance().renderCell();
+
+    expect(shallow(cell).is('.Cell')).toBe(true);
 });
