@@ -71,7 +71,9 @@ export default class Game extends React.Component {
     }
 
     isATie(cells) {
-
+        if (this.getWinner(cells)) {
+            return false;
+        }
     }
 
     render() {
