@@ -1,0 +1,9 @@
+@function long-shadow($color, $depth) {
+    $shadows: 0 0 $color;
+
+    @for $i from 1 through $depth {
+        $shadows: $shadows, #{$i}px #{$i}px #{$color};
+    }
+
+    @return $shadows;
+}
