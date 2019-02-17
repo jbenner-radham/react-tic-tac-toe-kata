@@ -1,4 +1,5 @@
 import React from 'react';
+import Cell from './Cell';
 import './Board.scss';
 
 export default class Board extends React.Component {
@@ -6,19 +7,19 @@ export default class Board extends React.Component {
         return (
             <div className="Board">
                 <div className="Board__row">
-                    <div className="Board__cell Board__cell--top-left"></div>
-                    <div className="Board__cell Board__cell--top-middle"></div>
-                    <div className="Board__cell Board__cell--top-right"></div>
+                    <Cell className="Board__cell--top-left"/>
+                    <Cell className="Board__cell--top-middle"/>
+                    <Cell className="Board__cell--top-right"/>
                 </div>
                 <div className="Board__row">
-                    <div className="Board__cell Board__cell--middle-left"> </div>
-                    <div className="Board__cell Board__cell--middle-middle">O</div>
-                    <div className="Board__cell Board__cell--middle-right"> </div>
+                    <Cell className="Board__cell--middle-left"/>
+                    <Cell className="Board__cell--middle-middle"/>
+                    <Cell className="Board__cell--middle-right"/>
                 </div>
                 <div className="Board__row">
-                    <div className="Board__cell Board__cell--bottom-left"> </div>
-                    <div className="Board__cell Board__cell--bottom-middle"> </div>
-                    <div className="Board__cell Board__cell--bottom-right">X</div>
+                    <Cell className="Board__cell--bottom-left"/>
+                    <Cell className="Board__cell--bottom-middle"/>
+                    <Cell className="Board__cell--bottom-right"/>
                 </div>
             </div>
         );

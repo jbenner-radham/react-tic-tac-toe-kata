@@ -1,0 +1,10 @@
+.Cell {
+    align-items: center;
+    background-color: #fefefe;
+    border: #1b1b1b solid 2px;
+    display: flex;
+    justify-content: center;
+    min-height: calc(100% / 3);
+    min-width: calc(100% / 3);
+    text-align: center;
+}
