@@ -23,3 +23,11 @@ it('has a "playerTurn" property which defaults to "X"', () => {
 it('has a "assignCell" method', () => {
     expect(Game.prototype.assignCell).toBeInstanceOf(Function);
 });
+
+it('toggles the "playerTurn" property when the "assignCell" method is invoked', () => {
+    const wrapper = shallow(<Game/>);
+
+    wrapper.instance().assignCell();
+
+    expect(wrapper.state().playerTurn).toBe('O');
+});
