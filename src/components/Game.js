@@ -8,6 +8,7 @@ export default class Game extends React.Component {
         this.state = {
             cells: Array(9).fill(null),
             history: [{ cells: Array(9).fill(null) }],
+            message: `X's turn.`,
             playerTurn: 'X'
         };
     }
@@ -68,6 +69,7 @@ export default class Game extends React.Component {
 
         return (
             <div className="Game">
+                <p>{this.state.message}</p>
                 <Board
                     cells={current.cells}
                     onClick={(index) => this.assignCell(index)}
