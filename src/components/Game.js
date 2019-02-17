@@ -11,7 +11,14 @@ export default class Game extends React.Component {
         };
     }
 
-    assignCell(index) {}
+    assignCell(index) {
+        const { playerTurn } = this.state;
+        const nextPlayerTurn = playerTurn === 'X' ? 'O' : 'X';
+
+        this.setState({
+            playerTurn: nextPlayerTurn
+        });
+    }
 
     render() {
         return (
