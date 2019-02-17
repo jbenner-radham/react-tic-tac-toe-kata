@@ -3,6 +3,12 @@ import Cell from './Cell';
 import './Board.scss';
 
 export default class Board extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = { playerTurn: 'X' };
+    }
+
     render() {
         return (
             <div className="Board">
