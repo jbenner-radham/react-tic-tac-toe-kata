@@ -41,3 +41,7 @@ it('assigns a player to a cell when "assignCell" is invoked', () => {
 
     expect(wrapper.state().cells[index]).toBe(playerTurn);
 });
+
+it('has a "history" property which is an array of objects', () => {
+    expect(shallow(<Game/>).state().history.every(move => move.cells)).toBe(true);
+});
