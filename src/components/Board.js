@@ -3,35 +3,15 @@ import Cell from './Cell';
 import './Board.scss';
 
 export default class Board extends React.Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            cells: Array(9).fill(null),
-            playerTurn: 'X'
-        };
-    }
-
     renderCell(index) {
+        const cells = this.props.cells || Array(9).fill(null);
+
         return (
             <Cell
-                value={this.state.cells[index]}
-                onClick={() => this.takeCell(index)}
+                value={cells[index]}
+                onClick={() => this.props.onClick(index)}
             />
         );
-    }
-
-    takeCell(index) {
-        const cells = [...this.state.cells];
-        const { playerTurn } = this.state;
-        const nextPlayerTurn = playerTurn === 'X' ? 'O' : 'X';
-
-        cells[index] = playerTurn;
-
-        this.setState({
-            cells,
-            playerTurn: nextPlayerTurn
-        });
     }
 
     render() {
