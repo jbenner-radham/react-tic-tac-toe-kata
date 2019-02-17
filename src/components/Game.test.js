@@ -98,3 +98,14 @@ it('should update the "message" property when there is a winner', () => {
 it('has an "isATie" method', () => {
     expect(Game.prototype.isATie).toBeInstanceOf(Function);
 });
+
+it('returns false from "isATie" if there is a winner', () => {
+    const wrapper = mount(<Game/>);
+    const fixture = [
+        'X', 'X', 'X',
+        'O', 'O', null,
+        null, null, null
+    ];
+
+    expect(wrapper.instance().isATie(fixture)).toBe(false);
+});
