@@ -11,6 +11,8 @@ export default class Game extends React.Component {
         };
     }
 
+    assignCell(index) {}
+
     render() {
         return (
             <article className="Game">
