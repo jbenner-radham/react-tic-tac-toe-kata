@@ -13,7 +13,7 @@ export default class Game extends React.Component {
     }
 
     assignCell(index) {
-        const history = [...this.state.history];
+        const { history } = this.state;
         const current = history[history.length - 1];
         const cells = [...current.cells];
         const { playerTurn } = this.state;
@@ -25,6 +25,10 @@ export default class Game extends React.Component {
             history: [...history, { cells }],
             playerTurn: nextPlayerTurn
         });
+    }
+
+    isGameDone() {
+
     }
 
     render() {
