@@ -69,3 +69,7 @@ it('will return false from the "getWinner" method on a new game', () => {
 
     expect(shallow(<Game/>).instance().getWinner(fixture)).toBe(false);
 });
+
+it('has a "message" which indicates it is "X\'s" upon initialization', () => {
+    expect(shallow(<Game/>).state().message).toEqual(`X's turn.`);
+});
