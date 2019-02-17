@@ -6,7 +6,10 @@ export default class Board extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = { playerTurn: 'X' };
+        this.state = {
+            cells: Array(9).fill(null),
+            playerTurn: 'X'
+        };
     }
 
     render() {
