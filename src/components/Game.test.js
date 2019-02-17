@@ -31,3 +31,13 @@ it('toggles the "playerTurn" property when the "assignCell" method is invoked', 
 
     expect(wrapper.state().playerTurn).toBe('O');
 });
+
+it('assigns a player to a cell when "assignCell" is invoked', () => {
+    const wrapper = shallow(<Game/>);
+    const index = 0;
+    const { playerTurn } = wrapper.state();
+
+    wrapper.instance().assignCell(index);
+
+    expect(wrapper.state().cells[index]).toBe(playerTurn);
+});
