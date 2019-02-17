@@ -1,5 +1,6 @@
 import React from 'react';
 import Board from './Board';
+import './Game.scss';
 
 export default class Game extends React.Component {
     constructor(props) {
@@ -69,7 +70,7 @@ export default class Game extends React.Component {
 
         return (
             <div className="Game">
-                <p>{this.state.message}</p>
+                <p className="Game__message">{this.state.message}</p>
                 <Board
                     cells={current.cells}
                     onClick={(index) => this.assignCell(index)}
