@@ -18,3 +18,9 @@ it('contains nine <Cell/> components', () => {
 it('has a "playerTurn" property which defaults to "X"', () => {
     expect(wrapper.state().playerTurn).toBe('X');
 });
+
+it('has a "cells" property which is an array of nine values', () => {
+    const cells = Array(9).fill(null);
+
+    expect(wrapper.state().cells).toEqual(cells);
+});
