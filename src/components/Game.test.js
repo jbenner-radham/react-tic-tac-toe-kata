@@ -15,3 +15,7 @@ it('has a "cells" property which is an array of nine values', () => {
 
     expect(shallow(<Game/>).state().cells).toEqual(cells);
 });
+
+it('has a "playerTurn" property which defaults to "X"', () => {
+    expect(shallow(<Game/>).state().playerTurn).toBe('X');
+});
