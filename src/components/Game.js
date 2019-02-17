@@ -74,6 +74,8 @@ export default class Game extends React.Component {
         if (this.getWinner(cells)) {
             return false;
         }
+
+        return cells.every(cell => cell !== null);
     }
 
     render() {
