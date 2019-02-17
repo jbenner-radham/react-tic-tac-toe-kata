@@ -7,6 +7,7 @@ export default class Game extends React.Component {
 
         this.state = {
             cells: Array(9).fill(null),
+            history: [{ cells: Array(9).fill(null) }],
             playerTurn: 'X'
         };
     }
