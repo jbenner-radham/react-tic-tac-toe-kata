@@ -14,3 +14,7 @@ it('renders without crashing', () => {
 it('contains nine <Cell/> components', () => {
     expect(wrapper.find('.Cell')).toHaveLength(9);
 });
+
+it('has a "playerTurn" property which defaults to "X"', () => {
+    expect(wrapper.state().playerTurn).toBe('X');
+});
