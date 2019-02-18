@@ -148,3 +148,15 @@ it('can be reset via a button', () => {
 
     expect(cell.text()).toBeFalsy();
 });
+
+it('can be rewound via a button', () => {
+    const wrapper = mount(<Game/>);
+    const rewindButton = wrapper.find('.Game__button--rewind').first();
+    const cells = wrapper.find('.Cell');
+
+    cells.at(0).simulate('click'); // X's turn.
+    cells.at(1).simulate('click'); // O's turn.
+    rewindButton.simulate('click');
+
+    expect(wrapper.find('.Board').text()).toBe('X');
+});
