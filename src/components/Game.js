@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faRedo } from '@fortawesome/free-solid-svg-icons';
+import { faBackward, faRedo } from '@fortawesome/free-solid-svg-icons';
 import React from 'react';
 import Board from './Board';
 import './Game.scss';
@@ -88,12 +88,33 @@ export default class Game extends React.Component {
         });
     }
 
+    rewind() {
+        const { history, playerTurn } = this.state;
+        const rewoundHistory = history.slice(0, history.length - 1);
+        const nextPlayerTurn = playerTurn === 'X' ? 'O' : 'X';
+        const message = `${nextPlayerTurn}'s turn.`;
+
+        this.setState({
+            history: rewoundHistory,
+            message,
+            playerTurn: nextPlayerTurn
+        });
+    }
+
     render() {
         const { history } = this.state;
         const current = history[history.length - 1];
 
         return (
             <div className="Game">
+                <button
+                    className="Game__button Game__button--rewind"
+                    title="Rewind"
+                    onClick={() => this.rewind()}
+                >
+                    <FontAwesomeIcon icon={faBackward}/>
+                </button>
+
                 <button
                     className="Game__button Game__button--reset"
                     title="Reset"
