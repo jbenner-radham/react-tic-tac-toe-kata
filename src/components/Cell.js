@@ -2,11 +2,19 @@ import React from 'react';
 import './Cell.scss';
 
 export default class Cell extends React.Component {
+    isDisabled(props) {
+        return this.props.value !== null;
+    }
+
     render(props) {
         return (
-            <div className="Cell" onClick={this.props.onClick}>
+            <button
+                className="Cell"
+                onClick={this.props.onClick}
+                disabled={this.isDisabled()}
+            >
                 {this.props.value}
-            </div>
+            </button>
         );
     }
 }
