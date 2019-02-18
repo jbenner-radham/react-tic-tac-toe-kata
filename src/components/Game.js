@@ -108,19 +108,19 @@ export default class Game extends React.Component {
         return (
             <div className="Game">
                 <button
-                    className="Game__button Game__button--rewind"
-                    title="Rewind"
-                    onClick={() => this.rewind()}
-                >
-                    <FontAwesomeIcon icon={faBackward}/>
-                </button>
-
-                <button
                     className="Game__button Game__button--reset"
                     title="Reset"
                     onClick={() => this.reset()}
                 >
                     <FontAwesomeIcon icon={faRedo}/>
+                </button>
+
+                <button
+                    className="Game__button Game__button--rewind"
+                    title="Rewind"
+                    onClick={() => this.rewind()}
+                >
+                    <FontAwesomeIcon icon={faBackward}/>
                 </button>
 
                 <p className="Game__message">{this.state.message}</p>

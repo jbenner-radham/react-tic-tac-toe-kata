@@ -7,11 +7,8 @@
     }
 
     &__button > svg {
-        filter: drop-shadow(2px 2px 2px rgba(0,0,0,.5));
-    }
-
-    & .btn:not(:first-of-type) {
-        margin-left: .5rem;
+        color: darken(#fff, 5%);
+        filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, .5));
     }
 
     &__message {
