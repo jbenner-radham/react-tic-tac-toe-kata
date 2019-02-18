@@ -1,6 +1,20 @@
 .Game {
+    text-align: center;
+
+    &__button {
+        background-color: transparent;
+        border: none;
+    }
+
+    &__button > svg {
+        filter: drop-shadow(2px 2px 2px rgba(0,0,0,.5));
+    }
+
+    & .btn:not(:first-of-type) {
+        margin-left: .5rem;
+    }
+
     &__message {
         font-size: 2rem;
-        text-align: center;
     }
 }

@@ -1,3 +1,5 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faRedo } from '@fortawesome/free-solid-svg-icons';
 import React from 'react';
 import Board from './Board';
 import './Game.scss';
@@ -78,13 +80,30 @@ export default class Game extends React.Component {
         return cells.every(cell => cell !== null);
     }
 
+    reset() {
+        this.setState({
+            history: [{ cells: Array(9).fill(null) }],
+            message: `X's turn.`,
+            playerTurn: 'X'
+        });
+    }
+
     render() {
         const { history } = this.state;
         const current = history[history.length - 1];
 
         return (
             <div className="Game">
+                <button
+                    className="Game__button Game__button--reset"
+                    title="Reset"
+                    onClick={() => this.reset()}
+                >
+                    <FontAwesomeIcon icon={faRedo}/>
+                </button>
+
                 <p className="Game__message">{this.state.message}</p>
+
                 <Board
                     cells={current.cells}
                     onClick={(index) => this.assignCell(index)}
