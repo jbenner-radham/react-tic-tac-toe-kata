@@ -2,6 +2,6 @@
 module.exports = {
     hooks: {
         'pre-commit': 'lint-staged',
-        'pre-push': 'npm test -- --all --no-watch'
+        'pre-push': 'cross-env CI=true npm test -- --all --watchAll=false'
     }
 };
