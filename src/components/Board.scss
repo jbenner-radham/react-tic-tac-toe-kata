@@ -2,7 +2,7 @@
 
 .Board {
     $box-shadow-color: lighten(#1b1b1b, 8%);
-    $box-shadow: long-shadow($box-shadow-color, 575);
+    $box-shadow: long-shadow($box-shadow-color, 675);
     $cell-size: 5rem;
     $board-size: $cell-size * 3;
 

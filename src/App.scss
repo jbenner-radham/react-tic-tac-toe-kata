@@ -3,7 +3,7 @@
 .App {
     $text-color: #fefefe;
     $text-shadow-color: darken(red, 15%);
-    $text-shadow: long-shadow($text-shadow-color, 475);
+    $text-shadow: long-shadow($text-shadow-color, 675);
 
     display: flex;
     flex-direction: column;
