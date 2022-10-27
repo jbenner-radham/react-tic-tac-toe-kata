@@ -10,6 +10,7 @@ export default class Cell extends React.Component {
         return (
             <button
                 className="Cell"
+                type="button"
                 onClick={this.props.onClick}
                 disabled={this.isDisabled()}
             >

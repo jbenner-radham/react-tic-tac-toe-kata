@@ -109,6 +109,7 @@ export default class Game extends React.Component {
             <div className="Game">
                 <button
                     className="Game__button Game__button--reset"
+                    type="button"
                     title="Reset"
                     onClick={() => this.reset()}
                 >
@@ -117,6 +118,7 @@ export default class Game extends React.Component {
 
                 <button
                     className="Game__button Game__button--rewind"
+                    type="button"
                     title="Rewind"
                     onClick={() => this.rewind()}
                 >

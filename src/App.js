@@ -5,10 +5,10 @@ import './App.scss';
 class App extends Component {
     render() {
         return (
-            <div className="App">
+            <main className="App">
                 <Game/>
                 <h1 className="App__heading">Tic-Tac-Toe!</h1>
-            </div>
+            </main>
         );
     }
 }
